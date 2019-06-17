@@ -1,0 +1,49 @@
+<header>
+  <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="javascript:;" th:href="@{/}">Usuários</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+
+<section class="mt-5">
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-light text-center">
+          <tr>
+            <th><button routerLink="add">
+                Adicionar
+              </button></th>
+            <th></th>
+            <th class="w-50">Nome</th>
+            <th class="w-50">Login</th>
+
+            <th class="w-25">E-mail</th>
+            <th class="w-25">Código</th>
+          </tr>
+        </thead>
+
+
+        <tr *ngFor="let usuario of usuario.data">
+          <td><a (click)="deleteContato(usuario.codUsuario)" class="btn btn-danger btn-sm">Delete</a></td>
+          <td><a routerLink="edit" class="btn btn-primary btn-sm">Editar</a> </td>
+          <td class="text-center w-25">{{usuario.nomUsuario}}</td>
+
+          <td>{{usuario.desLogin}} </td>
+
+          <td>{{usuario.desEmail}}</td>
+          <td>{{usuario.codUsuario}}</td>
+        </tr>
+
+
+       
+        
+        

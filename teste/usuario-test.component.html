@@ -1,0 +1,78 @@
+<h3> Usuários </h3>
+<div class="example-button-row">
+    <button mat-fab class="float-header-button" [routerLink]="['/usuario/add']">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+
+<br />
+<br />
+<br />
+<div class="container-fluid py-4">
+    <div [hidden]="!message">
+        <p class="{{statusRequest}}-message my-3">
+
+        </p>
+    </div>
+
+    <mat-expansion-panel class="my-3">
+        <mat-expansion-panel-header>
+            <mat-panel-title class="text font-bold">
+
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="row">
+            <div class="col">
+                <mat-checkbox #filterList (change)="filterByActivate($event)"></mat-checkbox>
+            </div>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-form-field>
+        <input matInput (keyup)="makeSearch($event.target.value)" autocomplete="off">
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <div class="container" tr *ngFor="let usuario of usuario.data">
+        <div class="row align-items-start">
+            <div class="col">
+                {{usuario.nomUsuario}}
+            </div>
+
+            <div class="col">
+                {{usuario.desLogin}}
+            </div>
+
+            <div class="col">
+                {{usuario.desEmail}}
+            </div>
+
+            <div class="col">
+                {{usuario.codUsuario}}
+            </div>
+
+            <div class="col">
+                <mat-icon class="color-light-black">lock</mat-icon>
+                &nbsp;
+                &nbsp;
+                <mat-icon class="color-light-black" routerLink="/usuario/edit">edit</mat-icon>
+                &nbsp;
+                &nbsp;
+                <mat-icon class="color-light-black" (click)="deleteContato(usuario.codUsuario)">delete</mat-icon>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+
+
+
+
+
+
+
+    <router-outlet></router-outlet>

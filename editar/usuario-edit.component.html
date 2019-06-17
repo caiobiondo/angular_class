@@ -1,0 +1,129 @@
+<header>
+        <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+                <div class="container">
+                        <a class="navbar-brand" href="javascript:;" th:href="@{/}"> Editar Usuários </a>
+
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+                </div>
+        </nav>
+</header>
+
+<main role="main">
+        <section class="my-4">
+                <div class="container">
+                        <h2>ITSM User</h2>
+                        <button routerLink="/usuario">
+                                Voltar
+                        </button>
+                </div>
+        </section>
+        <section>
+                <div class="container">
+
+                        <form method="post" #frm="ngForm" (ngSubmit)="update(frm)">
+
+                                <div class="form-group">
+                                        <label for="email">Codigo Usuario</label>
+                                        <input name="codUsuario" id="codUsuario" [(ngModel)]="contato.codUsuario" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Nomde de Usuario</label>
+                                        <input name="nameUser" id="nomUsuario" [(ngModel)]="contato.nomUsuario" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Login</label>
+                                        <input name="login" type="login" [(ngModel)]="contato.desLogin" />
+                                </div>
+
+                                <div> {{contato.datTrocasenha}} </div>
+
+                                <div class="form-group">
+                                        <label for="email">E-mail</label>
+                                        <input name="email" type="email" [(ngModel)]="contato.desEmail">
+
+
+                                </div>
+
+
+                                <div class="form-group">
+                                        <label for="email">Codigo Cliente</label>
+                                        <input type="email" name="codCliente" [(ngModel)]="contato.codCliente" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Nome Cliente</label>
+                                        <input type="email" name="nomCliente" [(ngModel)]="contato.nomCliente" />
+                                </div>
+
+
+                                <div class="form-group">
+                                        <label for="email">Tipo de Vizu</label>
+                                        <input type="email" name="tipVisualizacao"
+                                                [(ngModel)]="contato.tipVisualizacao" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Tipo de Int</label>
+                                        <input type="email" name="tipIntegracao" [(ngModel)]="contato.tipIntegracao" />
+                                </div>
+
+                                <div> {{contato.datSessao}} </div>
+
+                                <div class="form-group">
+                                        <label for="email">Situação do User</label>
+                                        <input type="email" name="tipSuperusuario"
+                                                [(ngModel)]="contato.tipSuperusuario" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Codigio da Lingua</label>
+                                        <input type="email" name="codLingua" [(ngModel)]="contato.codLingua" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Lingua</label>
+                                        <input type="email" name="nomLingua" [(ngModel)]="contato.nomLingua" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Filial (31)</label>
+                                        <input type="email" name="codEmpresafilial"
+                                                [(ngModel)]="contato.codEmpresafilial" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Nome Empresa Filial (NSB SP)</label>
+                                        <input type="email" name="nomEmpresafilial"
+                                                [(ngModel)]="contato.nomEmpresafilial" />
+                                </div>
+
+                                <div class="form-group">
+                                        <label for="email">Ancestral Filial (NSB SP)</label>
+                                        <input type="email" name="ancestralEmpresafilial"
+                                                [(ngModel)]="contato.ancestralEmpresafilial" />
+                                </div>
+
+                                <button type="submit" class="btn btn-primary"
+                                        [disabled]="frm.invalid">Atualizar</button>
+
+
+
+                        </form>
+
+                </div>
+
+
+
+
+
+        </section>
+
+
+
+</main>

@@ -1,0 +1,117 @@
+<div class="row">
+        <div class="col-12" *ngIf="!showAddNewItem">
+                <button (click)="form.submitForm()" mat-raised-button color="primary" class="ml-3 float-right"></button>
+
+                <button mat-raised-button color="basic" type="button" class="float-right" (click)="backPage()"></button>
+        </div>
+</div>
+
+
+
+<h3> Usuários </h3>
+<div class="example-button-row">
+        <button mat-fab class="float-header-button" [routerLink]="['/usuario/add']">
+                <mat-icon>add</mat-icon>
+        </button>
+</div>
+
+<br />
+<br />
+<br />
+
+
+
+<mat-expansion-panel class="my-3">
+        <mat-expansion-panel-header>
+                <mat-panel-title class="text font-bold">
+
+                </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <div class="row">
+                <div class="col">
+                        <mat-checkbox #filterList (change)="filterByActivate($event)"></mat-checkbox>
+                </div>
+        </div>
+</mat-expansion-panel>
+
+<mat-form-field>
+        <input matInput (keyup)="makeSearch($event.target.value)" autocomplete="off">
+        <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+<mat-card id="card">
+        <mat-card-content>
+                <div style="display:flex; flex-direction: row; " class="form-group">
+                        <form method="post" #frm="ngForm" (ngSubmit)="criar(frm)">
+
+
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Codigo-Cliente" class="form-control"
+                                                [(ngModel)]="cadastro.codCliente" name="nome" />
+                                </mat-form-field><br /> <br />
+
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Cod-Empresarial" class="form-control"
+                                                [(ngModel)]="cadastro.codEmpresarial" name="nome" />
+                                </mat-form-field>
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Nome de Usuario" class="form-control"
+                                                [(ngModel)]="cadastro.nomUsuario" name="nome" />
+                                </mat-form-field>
+
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Login" class="form-control"
+                                                [(ngModel)]="cadastro.desLogin" name="nome" />
+                                </mat-form-field><br /><br />
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Senha" class="form-control"
+                                                [(ngModel)]="cadastro.desSenha" name="nome" />
+                                </mat-form-field><br /> <br />
+
+
+                                <mat-form-field>
+                                        <input matInput placeholder="email" class="form-control"
+                                                [(ngModel)]="cadastro.desEmail" name="nome" />
+                                </mat-form-field>
+
+
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Usuario" class="form-control"
+                                                [(ngModel)]="cadastro.sitUsuario" name="nome" />
+                                </mat-form-field><br /><br />
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Tipo de Visualização" class="form-control"
+                                                [(ngModel)]="cadastro.tipVisualizacao" name="nome" />
+                                </mat-form-field><br /> <br />
+
+
+                                <mat-form-field>
+                                        <input matInput placeholder="SUDO" class="form-control"
+                                                [(ngModel)]="cadastro.tipSuperusuario" name="nome" />
+                                </mat-form-field>
+
+
+
+                                <mat-form-field>
+                                        <input matInput placeholder="Codigio da Lingua" class="form-control"
+                                                [(ngModel)]="cadastro.codLingua" name="nome" />
+                                </mat-form-field><br /><br />
+
+
+                                <button type="submit" class="btn btn-primary" [disabled]="frm.invalid">Salvar</button>
+
+                        </form>
+
+                </div>
+
+        </mat-card-content>
+
+
+</mat-card>

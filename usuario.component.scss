@@ -1,0 +1,23 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@import "../../assets/css/sass/variables.scss";
+@import "../../assets/css/sass/theme.scss";
+@import "../../assets/css/sass/base.scss";
+@import "../../assets/css/sass/icons.scss";
+@import "../../assets/css/sass/menus.scss";
+@import "../../assets/css/sass/buttons.scss";
+@import "../../assets/css/sass/forms.scss";
+@import "../../assets/css/sass/widget.scss";
+@import "../../assets/css/sass/tables.scss";
+@import "../../assets/css/sass/style.scss";
+@import "../../assets/css/sass/responsive.scss";
+
+
+vjs-component.resource {
+  display: block;
+   padding: 20px 0px;
+  height: 100%;
+}
+
